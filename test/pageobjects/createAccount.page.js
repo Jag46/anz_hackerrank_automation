@@ -1,4 +1,6 @@
 const BasePage = require('./basepage');
+const helper = require('../../utils/ActionHelper')
+const testdata = require('../../data/globalTestData')
 
 /**
  * sub page containing specific selectors and methods for a specific page
@@ -7,25 +9,29 @@ class accountCreationPage extends BasePage {
     /**
      * define selectors using getter methods
      */
-     get emailText () { return $('#email_create') }
-     get signInButton () { return $('#SubmitCreate')}
-     get createAccountPage () {return $('#account-creation_form')}
+     get createAccountURL() {return 'http://automationpractice.com/index.php?controller=authentication&back=my-account#account-creation'};
+     get idgender () { return $('#id_gender1') }
+     get firstName () { return $('#customer_firstname')}
+     get lastName () {return $('#customer_lastname')}
 
     /**
      * a method to encapsule automation code to interact with the page
      * e.g. to login using username and password
      */
-    signin (email) {
-        this.emailText.setValue(email);
-        this.signInButton.click();
+    setUserDataForSignIn () {
+        helper.selectRadio(this.idgender);
+        helper.setValue(this.firstName, testdata.userCreationData.firstName);
+        helper.setValue(this.lastName, testdata.userCreationData.lastName);
+        helper.pause(4);
     }
 
     /**
-     * overwrite specifc options to adapt it to page object
+     * Validation methods for accountCreationPage
      */
-    open () {
-        return super.open('controller=authentication&back=my-account');
+     validateCreatAccountPageDisplayed(){
+        browser.waitForUrl(this.createAccountURL, 6000);
+        return browser.pageLoaded();
     }
 }
 
-module.exports = new SigninPage();
+module.exports = new accountCreationPage();

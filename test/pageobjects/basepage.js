@@ -11,7 +11,6 @@ module.exports = class BasePage {
     */
     open (path) {
         helper.launchBrowserUrl(path);
-        browser.setWindowSize(1920, 1080);
         browser.waitForUrl(path,4000);
         return browser.pageLoaded();
     }

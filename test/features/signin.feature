@@ -1,7 +1,14 @@
-Feature: User sign in to webapp
+Feature: User sign in to e-commerce webapp successfully
 
-  Scenario: As a user, I can sign in to given webapp
-
+  Background: Navigate to CreateAccount page from signin page
     Given I am on the login page
-    When I should see a email field is displayed
-    Then I signin with "test2134@test.com"
+    And I should see a email field is displayed
+    And I signin with "test2134@test.com"
+
+  #********************************************************************
+  #   Scenarios for creating new user account
+  # *******************************************************************
+
+  Scenario: Validate new user account has been created successfully
+    Given I am on the create Account page
+

@@ -12,7 +12,6 @@ class SigninPage extends BasePage {
      get LoginURL() {return 'http://automationpractice.com/index.php?controller=authentication&back=my-account'};
      get emailText () { return $('#email_create') }
      get signInButton () { return $('#SubmitCreate')}
-     get createAccountPage () {return $('#account-creation_form')}
      
     /**
      * a method to encapsule automation code to interact with the page
@@ -21,11 +20,6 @@ class SigninPage extends BasePage {
     signin (email) {
         this.emailText.setValue(email);
         browser.waitThenClick(this.signInButton);
-    }
-
-    pageDisplayValidation(){
-        helper.pause(3);
-        helper.isVisible(this.createAccountPage);
     }
 
     /**
