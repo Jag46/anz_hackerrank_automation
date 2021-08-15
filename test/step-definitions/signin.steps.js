@@ -1,13 +1,8 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 const SigninPage = require('../pageobjects/signin.page');
 
-const pages = {
-    login: SigninPage
-}
-
 Given(/^I am on the (\w+) page$/, (page) => {
-    pages[page].open();
-    browser.pause(3000);
+    SigninPage.isOpen();
 });
 
 When(/^I signin with "(.*)"$/, (email) => {
@@ -16,7 +11,6 @@ When(/^I signin with "(.*)"$/, (email) => {
 });
 
 Then(/^I should see a email field is displayed$/, () => {
-    browser.setWindowSize(1820, 1080);
     expect(SigninPage.emailText).toBeExisting();
 });
 

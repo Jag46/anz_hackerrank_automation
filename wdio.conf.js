@@ -1,3 +1,4 @@
+const commands = require('./utils/CustomCommands')
 exports.config = {
     //
     // ====================
@@ -204,8 +205,12 @@ exports.config = {
      * @param {Array.<String>} specs        List of spec file paths that are to be run
      * @param {Object}         browser      instance of created browser/device session
      */
-    // before: function (capabilities, specs) {
-    // },
+    before: function (capabilities, specs) {
+        //Add custom commands to WDIO
+        Object.keys(commands).forEach(key =>{
+            browser.addCommand(key, commands[key]);
+        })
+    },
     /**
      * Runs before a WebdriverIO command gets executed.
      * @param {String} commandName hook command name
