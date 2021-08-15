@@ -81,20 +81,10 @@ class ActionHelper {
    * This method clicks an element when it has become clickable
    * @param {Element} element Element locator
    */
-  click(element) {
+    static click(element) {
     element.waitForClickable();
     element.click();
   }
-
-  /**
-   * This method double clicks an element when it has become clickable
-   * @param {Element} element Element locator
-   */
-  doubleClick(element) {
-    element.waitForClickable();
-    element.doubleClick();
-  }
-
 
   /**
    * This method waits for an element to become enabled and then clicks it
@@ -106,46 +96,10 @@ class ActionHelper {
   }
 
   /**
-   * This method waits for additonal the tab you want to switch to, to be fully loaded.
-   * @param {String} tab  Pass tab as the name of the tab you want to switch to
-   */
-  waitForTabAndChange(tab) {
-    browser.waitUntil(() => browser.getWindowHandles().length >= 2, {
-      timeout: 10000,
-      timeoutMsg: "Only one handle was avilable",
-    });
-    for (let i = 0; i < 3; i++) {
-      try {
-        browser.switchWindow(tab);
-      } catch (e) {
-        console.log(e);
-      }
-      if (browser.getTitle() == tab) {
-        break;
-      }
-      browser.pause(3000);
-    }
-    let documentState = browser.execute(function () {
-      return document.readyState;
-    });
-    browser.waitUntil(() => documentState === "complete" || "interactive", {
-      timeout: 10000,
-    });
-  }
-
-  /**
-   * This method waits for a specified period of time.
-   * @param {Int} timeOut  Passed as seconds
-   */
-  waitInSeconds(time) {
-    browser.pause(time * 1000);
-  }
-
-  /**
    * This method returns text from a specified elemnet
    * @param {Element} element  Element locator
    */
-  getText(element) {
+  static getText(element) {
     element.waitForDisplayed();
     return element.getText();
   }
@@ -155,7 +109,7 @@ class ActionHelper {
    * @param {Element} element  Element locator
    * @param {Int} time  Passed as seconds
    */
-  waitforElementDisplayed(element, time) {
+  static waitforElementDisplayed(element, time) {
     element.waitForDisplayed(time * 1000);
   }
 
@@ -164,7 +118,7 @@ class ActionHelper {
    * @param {Element} element  Element locator of the dropdown
    * @param {String} value Value you want to select from the dropdown
    */
-  selectDropDownByValue(element, value) {
+  static selectDropDownByValue(element, value) {
     element.waitForEnabled();
     element.click();
     element.selectByVisibleText(value);
@@ -175,7 +129,7 @@ class ActionHelper {
    * @param {Element} element  Element locator of the dropdown
    * @param {String} value Value you want to select from the dropdown
    */
-     selectFilterableDropDownByValue(element, value) {
+     static selectFilterableDropDownByValue(element, value) {
       element.waitForEnabled();
       element.click();
       value.click()
@@ -185,7 +139,7 @@ class ActionHelper {
    * This method checks an element exists in the DOM and returns a boolean
    * @param {Element} element  Element locator
    */
-  isAvailable(element) {
+  static isAvailable(element) {
     return element.isExisting();
   }
 
@@ -193,14 +147,14 @@ class ActionHelper {
    * This method checks an element is selected and returns a boolean
    * @param {Element} element  Element locator
    */
-  isSelected(element) {
+  static isSelected(element) {
     return element.isSelected();
   }
 
   /**
    * This method accepts a browser alert
    */
-  acceptAlert() {
+  static acceptAlert() {
     browser.acceptAlert();
   }
 
@@ -208,35 +162,35 @@ class ActionHelper {
    * This method switches to a specified frame in the browser object
    * @param {String} iframe  Frame idenifier
    */
-  switchFrame(iframe) {
+  static switchFrame(iframe) {
     browser.switchToFrame(iframe);
   }
 
   /**
    * This method switches back to the browsers parent frame
    */
-  switchToParentFrame() {
+  static switchToParentFrame() {
     browser.switchToParentFrame();
   }
 
   /**
    * This method actives the browser back button
    */
-  browserBack() {
+  static browserBack() {
     browser.back();
   }
 
   /**
    * This method closes the browsers window
    */
-  closeWindow() {
+  static closeWindow() {
     browser.closeWindow();
   }
 
   /**
    * This method switches to the browsers last window handle
    */
-  switchToLastWindow() {
+  static switchToLastWindow() {
     browser.switchToWindow(
       browser.getWindowHandles()[browser.getWindowHandles().length - 1]
     );

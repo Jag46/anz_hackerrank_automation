@@ -7,8 +7,8 @@ var globalTestData = function() {
     company: "",
     city: "",
     postcode: "",
-    password: "",
-    email: "",
+    password: "Rossi@1234",
+    email: "test2134@test.com",
     phone_mobile: "",
     aliasName: ""
   };
