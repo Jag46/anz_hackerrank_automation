@@ -1,6 +1,5 @@
 const BasePage = require('./basepage');
 const helper = require('../../utils/ActionHelper');
-const expectChai = require('chai').expect;
 const testdata = require('../../data/globalTestData');
 
 /**
@@ -13,6 +12,7 @@ class LoginPage extends BasePage {
     get emailid () { return $('#email') }
     get password () { return $('#passwd')}
     get loginButton () { return $('#SubmitLogin')}
+    get logoutButton () { return $('.logout')}
 
     /**
      * a method to encapsule automation code to interact with the page
@@ -27,6 +27,10 @@ class LoginPage extends BasePage {
 
     clickSignInButton(){
         helper.click(this.loginButton);
+    }
+
+    clicklogoutButton(){
+        helper.click(this.logoutButton);
     }
 
 }

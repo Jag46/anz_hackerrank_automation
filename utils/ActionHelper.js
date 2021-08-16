@@ -19,6 +19,10 @@ class ActionHelper {
         return browser.getTitle();
     }
 
+    static getUrlText() {
+      return browser.getUrl();
+    }
+
     static pause(seconds) {
         browser.pause(seconds * 1000);
     }

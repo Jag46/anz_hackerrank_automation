@@ -8,7 +8,7 @@ var globalTestData = function() {
     city: "Kern",
     postcode: "95305",
     password: "Rossi@1234",
-    email: "test5488@test.com",
+    email: "test5489@test.com",
     phone_mobile: "9123456789",
     aliasName: "My Address"
   };

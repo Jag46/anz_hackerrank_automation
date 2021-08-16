@@ -129,7 +129,21 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter.html
-    reporters: ['spec'],
+
+    reporters: [
+        'spec',
+        ['allure', {
+        outputDir: './reports/allure-results/',
+        disableWebdriverStepsReporting: false,
+        disableWebdriverScreenshotsReporting: false,
+        }],
+        ['junit', {
+            outputDir: './reports/junit-reporter/',
+            outputFileFormat: function(options) { // optional
+                return `junit-report.xml`
+            }
+        }]
+    ],
 
 
     //
@@ -236,8 +250,9 @@ exports.config = {
     /**
      * Runs after a Cucumber step
      */
-    // afterStep: function ({ uri, feature, step }, context, { error, result, duration, passed, retries }) {
-    // },
+    afterStep: function ({ uri, feature, step }, context, { error, result, duration, passed, retries }) {
+        browser.takeScreenshot();
+    },
     /**
      * Runs after a Cucumber scenario
      */
