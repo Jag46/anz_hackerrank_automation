@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="User login in to e commerce webapp successfully" timestamp="2021-08-16T22:53:38" time="23.416" tests="1" failures="0" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="featureName" value="User login in to e-commerce webapp successfully"/>
+      <property name="capabilities" value="chrome.92_0_4515_131.windows"/>
+      <property name="featureFile" value=".\test\features\login.feature"/>
+    </properties>
+    <testcase classname="CucumberJUnitReport-chrome.92_0_4515_131.windows.User login in to e commerce webapp successfully" name="Validate user able to login successfully" time="23.365">
+      <system-out><![CDATA[
+✅ Given I am on the login page✅ And I should see a email field is displayed✅ When I enter the required login details✅ And I click sign in button on the page✅ Then I successfully logged into to ecomm web app
+]]></system-out>
+    </testcase>
+  </testsuite>
+</testsuites>
