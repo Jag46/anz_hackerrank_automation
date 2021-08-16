@@ -116,12 +116,12 @@ class ActionHelper {
   /**
    * This method waits for an element to become enabled and then clicks it allowing the dropdown values to be accessed
    * @param {Element} element  Element locator of the dropdown
-   * @param {String} value Value you want to select from the dropdown
+   * @param {Int} index index you want to select from the dropdown
    */
-  static selectDropDownByValue(element, value) {
+  static selectDropDownByindex(element, index) {
     element.waitForEnabled();
     element.click();
-    element.selectByVisibleText(value);
+    element.selectByIndex(index);
   }
 
    /**

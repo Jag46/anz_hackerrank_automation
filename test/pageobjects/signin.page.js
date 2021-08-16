@@ -1,6 +1,7 @@
 const BasePage = require('./basepage');
 const helper = require('../../utils/ActionHelper');
 const { launchBrowserUrl } = require('../../utils/ActionHelper');
+const testdata = require('../../data/globalTestData')
 
 /**
  * sub page containing specific selectors and methods for a specific page
@@ -17,8 +18,8 @@ class SigninPage extends BasePage {
      * a method to encapsule automation code to interact with the page
      * e.g. to login using username and password
      */
-    signin (email) {
-        this.emailText.setValue(email);
+    signin () {
+        helper.setValue(this.emailText, testdata.userCreationData.email);
         browser.waitThenClick(this.signInButton);
     }
 

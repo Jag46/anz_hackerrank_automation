@@ -18,7 +18,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        'test/features/signin.feature'
+        'test/features/login.feature'
     ],
     // Patterns to exclude.
     exclude: [
