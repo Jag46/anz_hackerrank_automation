@@ -4,7 +4,9 @@
   "description": "Automation of ecommerce app with WDIO V7",
   "main": "index.js",
   "scripts": {
-    "test": "wdio wdio.conf.js"
+    "test": "wdio wdio.conf.js",
+    "open-allure": "./node_modules/.bin/allure generate ./reports/allure-results --clean && allure open",
+    "junit-report-test": "wdio wdio.conf.js && wdio-junit-to-html -i ./reports/junit-reporter/ -o ./reports/junit-reporter/"
   },
   "author": "Jagadish_BR",
   "license": "ISC",
@@ -14,13 +16,15 @@
     "@wdio/allure-reporter": "^7.9.1",
     "@wdio/cli": "^7.9.1",
     "@wdio/cucumber-framework": "^7.9.1",
+    "@wdio/junit-reporter": "^7.9.0",
     "@wdio/local-runner": "^7.9.1",
     "@wdio/spec-reporter": "^7.9.0",
     "@wdio/sync": "^7.9.1",
+    "allure-commandline": "^2.13.8",
     "chai": "^4.3.4",
     "chromedriver": "^92.0.1",
     "wdio-chromedriver-service": "^7.2.0",
-    "wdio-cucumber-reporter": "0.0.2",
+    "wdio-junit-to-html": "^3.1.2",
     "webdriverio": "^7.9.1"
   }
 }

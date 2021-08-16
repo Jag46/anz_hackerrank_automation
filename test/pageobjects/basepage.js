@@ -12,6 +12,7 @@ module.exports = class BasePage {
     open (path) {
         helper.launchBrowserUrl(path);
         browser.waitForUrl(path,4000);
+        browser.maximizeWindow();
         return browser.pageLoaded();
     }
 }
