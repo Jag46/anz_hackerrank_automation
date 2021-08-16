@@ -1,0 +1,4 @@
+{
+  "using": "css selector",
+  "value": "li[class=\"sfHover\"] a[title=\"T-shirts\"]"
+}

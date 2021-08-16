@@ -1,0 +1,4 @@
+{
+  "script": "return (function () {\r\n                        return document.readyState;\r\n                    }).apply(null, arguments)",
+  "args": []
+}
