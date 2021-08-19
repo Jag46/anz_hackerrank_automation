@@ -1,16 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="User add a product to cart and proceed to payment page" timestamp="2021-08-16T23:38:21" time="61.909" tests="1" failures="0" errors="0" skipped="0">
+  <testsuite name="User login in to e commerce webapp successfully" timestamp="2021-08-19T20:25:38" time="11.709" tests="1" failures="1" errors="1" skipped="0">
     <properties>
       <property name="specId" value="0"/>
-      <property name="featureName" value="User add a product to cart and proceed to payment page"/>
-      <property name="capabilities" value="chrome.92_0_4515_131.windows"/>
-      <property name="featureFile" value=".\test\features\productShopping.feature"/>
+      <property name="featureName" value="User login in to e-commerce webapp successfully"/>
+      <property name="capabilities" value="chrome.92_0_4515_159.windows"/>
+      <property name="featureFile" value=".\test\features\login.feature"/>
     </properties>
-    <testcase classname="CucumberJUnitReport-chrome.92_0_4515_131.windows.User add a product to cart and proceed to payment page" name="Validate product selected has been displayed on payment page" time="61.887">
+    <testcase classname="CucumberJUnitReport-chrome.92_0_4515_159.windows.User login in to e commerce webapp successfully" name="Validate user able to login successfully" time="11.689">
+      <failure/>
+      <error message="Error: Expect $(`#email_create`) to be existing"/>
       <system-out><![CDATA[
-✅ Given I am on the login page✅ And I should see a email field is displayed✅ When I enter the required login details✅ And I click sign in button on the page✅ Then I successfully logged into to ecomm web app✅ When I browser the required product and add into cart✅ And I proceed to payment page with required details✅ Then I successfully verified the selected product on payment page
+✅ Given I am on the login page❗ And I should see a email field is displayed⚠️ When I enter the required login details
+⚠️ And I click sign in button on the page
+⚠️ Then I successfully logged into to ecomm web app
 ]]></system-out>
+      <system-err><![CDATA[
+Error: Expect $(`#email_create`) to be existing
+
+Expected: "existing"
+Received: "not existing"
+    at World.<anonymous> (C:\Users\IBMADMIN\Documents\igs_ecommerce_automation\anz_hackerrank_automation\test\step-definitions\signin.steps.js:14:34)
+    at World.executeSync (C:\Users\IBMADMIN\Documents\igs_ecommerce_automation\anz_hackerrank_automation\node_modules\@wdio\sync\build\index.js:38:22)
+    at C:\Users\IBMADMIN\Documents\igs_ecommerce_automation\anz_hackerrank_automation\node_modules\@wdio\sync\build\index.js:69:68
+]]></system-err>
     </testcase>
   </testsuite>
 </testsuites>

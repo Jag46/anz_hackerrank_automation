@@ -1,4 +1,0 @@
-{
-  "using": "xpath",
-  "value": "//a[@class=\"button btn btn-default standard-checkout button-medium\"]//span[contains(text(),\"Proceed to checkout\")]"
-}

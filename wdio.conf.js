@@ -19,7 +19,8 @@ exports.config = {
     //
     specs: [
         'test/features/signin.feature',
-        'test/features/productShopping.feature'
+        'test/features/productShopping.feature',
+        'test/features/login.feature'
     ],
     // Patterns to exclude.
     exclude: [
@@ -173,7 +174,7 @@ exports.config = {
         // <string> (expression) only execute the features or scenarios with tags matching the expression
         tagExpression: '',
         // <number> timeout for step definitions
-        timeout: 60000,
+        timeout: 80000,
         // <boolean> Enable this config to treat undefined definitions as warnings.
         ignoreUndefinedDefinitions: false
     },

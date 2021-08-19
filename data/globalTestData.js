@@ -4,11 +4,11 @@ var globalTestData = function() {
     lastName: "Rossi",
     address1: "404 4th floor",
     address2: "wood street",
-    company: "IGS",
+    company: "ANZ",
     city: "Kern",
     postcode: "95305",
     password: "Rossi@1234",
-    email: "test974@test.com",
+    email: "test555@test.com",
     phone_mobile: "9123456789",
     aliasName: "My Address"
   };
