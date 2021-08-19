@@ -1,4 +1,4 @@
-# igs_ecommerce_automation
+# ANZ_HackerRank_Automation
  
 ### WebdriverIO-v7 code with Cucumber BDD
 

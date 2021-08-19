@@ -1,5 +1,5 @@
 {
-  "name": "igs_ecommerce_automation",
+  "name": "anz_hackerrank_automation",
   "version": "1.0.0",
   "description": "Automation of ecommerce app with WDIO V7",
   "main": "index.js",

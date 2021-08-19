@@ -10,7 +10,7 @@ class SigninPage extends BasePage {
     /**
      * define selectors using getter methods
      */
-     get LoginURL() {return 'http://automationpractice.com/index.php?controller=authentication&back=my-account'};
+     get LoginURL() {return 'http://automationpractice.com/index.php?controller=authentication&back=my-account#account-creation'};
      get emailText () { return $('#email_create') }
      get signInButton () { return $('#SubmitCreate')}
      
